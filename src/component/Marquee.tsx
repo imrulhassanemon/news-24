@@ -15,7 +15,6 @@ const Marquee = async() => {
     const data = await res.json();
 
     const headLines:HeadLine[] = data.data;
-    console.log(headLines);
 
     return (
         <div className="bg-[#a51d2d]  text-white">
