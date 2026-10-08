@@ -1,6 +1,4 @@
 import Image from "next/image";
-import React from "react";
-
 interface News {
   title: string;
   description: string;
@@ -10,7 +8,6 @@ interface News {
 }
 
 const NewsCard = ({news}: {news: News}) => {
-    console.log(news);
   return (
     <div>
       <div className="card bg-base-100  shadow-sm">
