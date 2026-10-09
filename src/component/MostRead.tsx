@@ -7,7 +7,6 @@ const MostRead = async () => {
   const res = await fetch("https://news-api-v2.vercel.app/api/news/most-read");
   const data = await res.json();
   const news :mostReadNews[] = data.data;
-  console.log(news);
 
   return (
     <div className="card bg-base-100 border-gray-300 border p-2 ">

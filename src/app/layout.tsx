@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { Noto_Serif_Bengali } from "next/font/google";
 import "./globals.css";
 import Header from "@/component/Header";
+import Marquee from "@/component/Marquee";
 
 const notoSerifBengali = Noto_Serif_Bengali({
-  subsets: ["latin", 'bengali'],
+  subsets: ["latin", "bengali"],
 });
-
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,13 +17,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      data-theme='light'
+      data-theme="light"
       className={`${notoSerifBengali.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Header/>
-        {children}
-        </body>
+        <Header />
+        <Marquee />
+        <main className="mx-auto  max-w-7xl">{children}</main>
+      </body>
     </html>
   );
 }

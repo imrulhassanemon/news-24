@@ -3,7 +3,7 @@ import NavLinks from "./NavLinks";
 export default function Navbar() {
   return (
     <header className="border-t-2 border-[#2d1b2d] bg-white shadow-sm">
-      <nav className="mx-auto flex h-16 lg:max-w-7xl items-center justify-center px-4">
+      <nav className=" flex h-16  items-center justify-center px-4">
         
         {/* Center Logo / Brand */}
         <div className="absolute left-1/2 flex -translate-x-1/2 items-center gap-2">
