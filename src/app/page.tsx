@@ -37,7 +37,7 @@ export default async function Home() {
             {otherSections.map((section) => (
               <div key={section.curationId}>
                 <h1 className="text-xl pb-2 font-bold border-b-2 border-red-600">
-                  {section.title}
+                  {section?.title}
                 </h1>
                 <div className="grid grid-cols-3 mt-5 gap-3">
                   {section.articles.map((news) => (

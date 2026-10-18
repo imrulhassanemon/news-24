@@ -1,3 +1,4 @@
+import Link from "next/link";
 import MarqueeText from "react-marquee-text";
 import "react-marquee-text/dist/styles.css";
 
@@ -24,10 +25,15 @@ const Marquee = async () => {
           willChange={true}
         >
           {headLines.map((h) => (
-            <span key={h.id}>
+
+            <div key={h.id}>
+              <Link href={`/news/${h.id}`} className="hover:underline" >
+            <span >
               <span>{h.title}</span>
+            </span></Link>
               <span className="mx-5">󠁯•󠁏</span>
-            </span>
+
+            </div>
           ))}
         </MarqueeText>
       </div>

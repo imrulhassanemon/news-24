@@ -61,7 +61,7 @@ const NewsDetails = async ({ params } ) => {
 
             {/* Title */}
             <h1 className="mb-6 text-3xl font-bold leading-tight text-gray-900 md:text-5xl">
-                {news.title}
+                {news?.title}
             </h1>
 
             {/* Author & Date */}
@@ -69,14 +69,14 @@ const NewsDetails = async ({ params } ) => {
                 <span>
                     লিখেছেন:{" "}
                     <strong className="text-gray-800">
-                        {news.byline?.[0]?.name}
+                        {news?.byline?.[0]?.name}
                     </strong>
                 </span>
 
                 <span>•</span>
 
                 <span>
-                    {new Date(news.firstPublished).toLocaleDateString(
+                    {new Date(news?.firstPublished).toLocaleDateString(
                         "bn-BD",
                         {
                             year: "numeric",
@@ -99,23 +99,23 @@ const NewsDetails = async ({ params } ) => {
             </div>
 
             {/* Image caption */}
-            {news.body?.[0]?.caption && (
+            {news?.body?.[0]?.caption && (
                 <p className="mb-8 text-sm text-gray-500">
-                    {news.body[0].caption}
+                    {news?.body[0]?.caption}
                 </p>
             )}
 
             {/* Description */}
             <div className="mb-8 rounded-xl bg-gray-50 p-5">
                 <p className="text-lg font-medium leading-8 text-gray-700">
-                    {news.description?.blocks?.[0]?.model?.blocks?.[0]?.model
+                    {news?.description?.blocks?.[0]?.model?.blocks?.[0]?.model
                         ?.text}
                 </p>
             </div>
 
             {/* News Body */}
             <article className="space-y-6 text-lg leading-9 text-gray-700">
-                {news.body?.map((item, index) => {
+                {news?.body?.map((item, index) => {
                     // Image
                     if (item.type === "image") {
                         return (
@@ -166,7 +166,7 @@ const NewsDetails = async ({ params } ) => {
 
             {/* Tags */}
             <div className="mt-10 flex flex-wrap gap-2 border-t pt-6">
-                {news.tags?.map((tag) => (
+                {news?.tags?.map((tag) => (
                     <span
                         key={tag}
                         className="rounded-md bg-gray-100 px-3 py-1 text-sm text-gray-600"
@@ -180,7 +180,7 @@ const NewsDetails = async ({ params } ) => {
             <div className="mt-8 border-t pt-6 text-sm text-gray-500">
                 Source:{" "}
                 <span className="font-medium text-gray-800">
-                    {news.source}
+                    {news?.source}
                 </span>
             </div>
         </main>
